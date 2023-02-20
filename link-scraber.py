@@ -2,15 +2,17 @@ from sys import argv
 import validators
 import requests
 
-def request():
-    pass
-    
 
-def validate_url(url):
-    valid_url=validators.url(url)
+def request(validated_url):
+    site = requests.get(validated_url).text
+      
+
+def validate_url(not_validated_url):
+    valid_url=validators.url(not_validated_url)
     if valid_url:
+        valid_url=not_validated_url
         print('URL is valid!')
-        #request(url)
+        request(valid_url)
         
     else:
         print('Please Enter a Valid URL!')
