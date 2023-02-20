@@ -4,6 +4,7 @@ import requests
 from bs4 import BeautifulSoup
 
 def request(validated_url):
+    print("link scrabing is started\n")
     try:
         site = requests.get(validated_url).text
         soup= BeautifulSoup(site, 'html.parser')
@@ -13,14 +14,13 @@ def request(validated_url):
             if validators.url(href):
                 print("link:",href)
     except:
-        print('Error...')
         pass
 
 def validate_url(not_validated_url):
     valid_url=validators.url(not_validated_url)
     if valid_url:
         valid_url=not_validated_url
-        print('URL is valid!\nlink scrabing is started\n')
+        print('URL is valid!\n')
         request(valid_url)
         
     else:
