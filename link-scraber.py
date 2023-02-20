@@ -1,4 +1,4 @@
-from sys import argv
+import sys
 import validators
 import requests
 from bs4 import BeautifulSoup
@@ -14,13 +14,13 @@ def request(validated_url):
                 print("link:",href)
     except:
         print('Error...')
-        sys.exit()
+        pass
 
 def validate_url(not_validated_url):
     valid_url=validators.url(not_validated_url)
     if valid_url:
         valid_url=not_validated_url
-        print('URL is valid!')
+        print('URL is valid!\nlink scrabing is started\n')
         request(valid_url)
         
     else:
@@ -28,11 +28,12 @@ def validate_url(not_validated_url):
 
 def input_url():
     try:
-        if len(argv) > 2:
+        if len(sys.argv) > 2:
             print('[~] Please Enter in valid format:\n\t |~| python link-scraber.py <url>')
         else:
-            validate_url(argv[1])
+            validate_url(sys.argv[1])
     except:
         print('[~] Input argument could\'t be empty!\n\t |~| python link-scraber.py <url>')
+        sys.exit()
         
 input_url()
