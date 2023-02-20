@@ -4,17 +4,17 @@ import validators
 def validate_url(url):
     valid_url=validators.url(url)
     if valid_url:
-        print('URL is ok!')
+        print('URL is valid!')
+        
     else:
         print('Please Enter a Valid URL!')
 
 def input_url():
     try:
-        #args = argv
         if len(argv) > 2:
-            print('[~] Please Enter in valid format:\n\t<~> python link-scraber.py <url>')
+            print('[~] Please Enter in valid format:\n\t |~| python link-scraber.py <url>')
         else:
-            validate_url(argv)
+            validate_url(argv[1])
     except:
         pass
         
