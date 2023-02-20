@@ -1,3 +1,4 @@
 validators
 sys
 requests
+bs4
