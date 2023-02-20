@@ -14,7 +14,7 @@ def input_url():
         if len(argv) > 2:
             print('[~] Please Enter in valid format:\n\t<~> python link-scraber.py <url>')
         else:
-            validate_url(url)
+            validate_url(argv)
     except:
         pass
         
