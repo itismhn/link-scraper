@@ -16,6 +16,6 @@ def input_url():
         else:
             validate_url(argv[1])
     except:
-        pass
+        print('[~] Input argument could\' be empty!\n\t |~| python link-scraber.py <url>')
         
 input_url()
