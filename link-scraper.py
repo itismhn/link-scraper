@@ -29,7 +29,7 @@ def validate_url(not_validated_url):
 def input_url():
     try:
         if len(sys.argv) > 2:
-            print('[~] Please Enter in valid format:\n\t |~| python link-scraber.py <url>')
+            print('[~] Please Enter in valid format:\n\t |~| python link-scraber.py https://example.com')
         else:
             validate_url(sys.argv[1])
     except:
